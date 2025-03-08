@@ -103,3 +103,6 @@ attachInterrupt(
 // Helper function to convert pin number to interrupt number
 uint8_t digitalPinToInterrupt(uint8_t pin);
 ```
+
+## Usable Pins on the MCU Board
+[NodeMCU 1.0 usable pins](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/#table)
