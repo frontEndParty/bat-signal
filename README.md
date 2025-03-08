@@ -72,6 +72,10 @@
 #include <LibraryName.h>   // Include external library
 #define MAX_SENSORS 5      // Maximum number of sensors
 
+//============== ARDUINO PROGRAM FUNCTIONS =============
+void setup();  // Runs once at start of execution
+void loop();  // Runs forever -- is the program
+
 //============== SERIAL COMMUNICATION ==============
 // Initialize serial communication
 Serial.begin(uint32_t baudRate);  // baudRate: 9600, 115200 etc.
@@ -82,11 +86,19 @@ Serial.println(T value);          // Print value (any type) with newline
 Serial.printf(const char* format, ...);  // Formatted print (like printf)
 
 //============== DIGITAL I/O ==============
+// Set pin mode
+pinMode(uint8_t pin, uint8_t mode);  // mode: INPUT/OUTPUT
+pinMode(BAT_SIGNAL_PIN, OUTPUT);
+
 // Write digital value to pin
 digitalWrite(uint8_t pin, uint8_t state);  // state: HIGH/LOW (1/0)
+// Example
+digitalWrite(LED_PIN, HIGH);
 
 // Read digital value from pin
 uint8_t digitalRead(uint8_t pin);  // Returns: HIGH or LOW
+// Example
+boolean value = digitalRead(BUTTON_PIN);
 
 //============== TIMING ==============
 // Pause program execution
