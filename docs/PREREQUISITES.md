@@ -1,67 +1,62 @@
-# PREREQUISITES
+# **Prerequisite Info**  
 
-## Concepts & Glossary
-- Digital information is just 0 and 1 -- on / off, true / false, HIGH / LOW
-    - HIGH / LOW - put simply, on / off. Is there a voltage or not.
-- Voltage is provided by a source. Current is demanded by the load.
-- LEDs and push buttons MUST be used with a resistor in series, else you're shorting the voltage / power supply to ground. 
-    - For LEDs, the amount of resistance chosen determines the current (and power) that passes thru the LED.
-    - For push buttons, we would ideally have zero current, as we just need to detect a change in voltage.
-- Arduino is (basically) C++
-- _If you just go connecting random things you are going to blow up your kit!_ :(
-- Make sure +/- on power supply aligns with +/- on bread board
-- + is RED
-- - is BLUE
+## **Concepts & Glossary**  
+- **Digital signals** are just **0 and 1** — **on/off**, **true/false**, **HIGH/LOW**.  
+  - **HIGH / LOW:** Simply put, **on/off**. HIGH means there's voltage; LOW means there isn’t.  
+- **Voltage is supplied** by a power source; **current is drawn** by the connected components (the load).  
+- **Resistors are required** in series with LEDs and push buttons:  
+  - **LEDs:** The resistor controls the current flowing through the LED.  
+  - **Push buttons:** Ideally, minimal current flows; we just need to detect a voltage change.  
+- **Arduino code is basically C++.**  
+- **Incorrect wiring = fried components.** Double-check before connecting!  
+- **Breadboard wiring:**  
+  - **Power (+) is RED**  
+  - **Ground (-) is BLUE**  
+  - Ensure **+/- from the power supply matches +/- on the breadboard**.  
 
-## Cheatsheet
+---  
+
+## **Cheat Sheet**  
+
+### **Preprocessor Macros**  
 ```cpp
-//============== PREPROCESSOR MACROS ==============
-#include "OtherFile.h"     // Include local header file
-#include <LibraryName.h>   // Include external library
-#define MAX_SENSORS 5      // Maximum number of sensors
-  
-//============== ARDUINO PROGRAM FUNCTIONS =============
-void setup();  // Runs once at start of execution
-void loop();  // Runs forever -- is the program
-  
-//============== SERIAL COMMUNICATION ==============
-// Initialize serial communication
-Serial.begin(uint32_t baudRate);  // baudRate: 9600, 115200 etc.
-  
-// Output to serial monitor
-Serial.print(T value);            // Print value (any type) without newline
-Serial.println(T value);          // Print value (any type) with newline
-Serial.printf(const char* format, ...);  // Formatted print (like printf)
-  
-//============== DIGITAL I/O ==============
-// Set pin mode
-pinMode(uint8_t pin, uint8_t mode);  // mode: INPUT/OUTPUT
-pinMode(BAT_SIGNAL_PIN, OUTPUT);
-  
-// Write digital value to pin
-digitalWrite(uint8_t pin, uint8_t state);  // state: HIGH/LOW (1/0)
-// Example
-digitalWrite(LED_PIN, HIGH);
-  
-// Read digital value from pin
-uint8_t digitalRead(uint8_t pin);  // Returns: HIGH or LOW
-// Example
-boolean value = digitalRead(BUTTON_PIN);
-  
-//============== TIMING ==============
-// Pause program execution
-delay(uint32_t milliseconds);  // Blocks code execution
-  
-//============== INTERRUPTS ==============
-// Attach interrupt to a pin
-attachInterrupt(
-    uint8_t interrupt,      // Use digitalPinToInterrupt(pin) to convert pin number
-    void (*ISR)(void),      // Function pointer to Interrupt Service Routine
-    uint8_t mode            // RISING, FALLING, CHANGE, LOW, or HIGH
-);
-  
-// Helper function to convert pin number to interrupt number
-uint8_t digitalPinToInterrupt(uint8_t pin);
-```
-## Usable Pins on the MCU Board
-[NodeMCU 1.0 usable pins](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/#table)
+#include "OtherFile.h"     // Include a local header file  
+#include <LibraryName.h>   // Include an external library  
+#define MAX_SENSORS 5      // Define constants  
+```  
+
+### **Arduino Program Structure**  
+```cpp
+void setup();  // Runs once at startup  
+void loop();   // Runs continuously after setup  
+```  
+
+### **Serial Communication**  
+```cpp
+Serial.begin(9600);        // Initialize serial communication  
+Serial.print("Hello");      // Print without newline  
+Serial.println("World");    // Print with newline  
+Serial.printf("Value: %d", 42);  // Formatted output  
+```  
+
+### **Digital I/O**  
+```cpp
+pinMode(LED_PIN, OUTPUT);       // Set pin as input/output  
+digitalWrite(LED_PIN, HIGH);    // Set pin HIGH (on) or LOW (off)  
+bool value = digitalRead(BUTTON_PIN);  // Read pin state  
+```  
+
+### **Timing**  
+```cpp
+delay(1000);  // Pause execution for 1000ms (1 second)  
+```  
+
+### **Interrupts**  
+```cpp
+attachInterrupt(digitalPinToInterrupt(PIN), ISR_function, RISING);  
+```  
+
+---
+
+## **Usable Pins on the MCU**  
+Check out this handy **[NodeMCU 1.0 pin reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/#table).**
