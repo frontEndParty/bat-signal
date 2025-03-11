@@ -28,16 +28,16 @@ HARDWARE SPECS:
 > - *the LED cannot regulate current on its own, so we use a resistor to lower the current*
 > - *without the resistor, the high current would destroy the LED*
 
-- PLACE A RESISTOR PIN IN THE SAME TERMINAL STRIP AS LED PIN
-- CONNECT OTHER RESISTOR PIN IN DIFFERENT TERMINAL STRIP
+- -> PLACE A RESISTOR PIN IN THE SAME TERMINAL STRIP AS LED PIN
+- -> CONNECT OTHER RESISTOR PIN IN DIFFERENT TERMINAL STRIP
     - (*in the picture, we use the strip directly across the dip*)
-- CONNECT STRIP ONE OF MCU BOARD'S DATA PINS VIA CONNECTING WIRE
+- -> CONNECT STRIP ONE OF MCU BOARD'S DATA PINS VIA CONNECTING WIRE
     - (*in the picture, we use d7*)
 
 <br>
 
 - **CODE TASK**:
-	- -> `SET THE MODE OF THE PIN WE ARE USING IN THE SETUP FUNCTION`
+	- `SET THE MODE OF THE PIN WE ARE USING IN THE SETUP FUNCTION`
 	- `LISTEN TO EVENTS FROM CLOUD VIA EVENT LISTENER AND RESPOND TO THEM`
 		- (`if isOn` (your `bool` var) is `true` turn on LED, `else` turn off)
 
