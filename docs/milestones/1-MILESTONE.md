@@ -2,8 +2,7 @@
 ## MILESTONE ONE
 **GOAL: CREATE ARDUINO CLOUD ACCOUNT, SETUP A 'HELLO WORLD' WITH YOUR MCU BOARD.**
 
-- [CREATE ACCOUNT](https://login.arduino.cc/login)
-- [ARDUINO ESP32 DOCS](https://docs.arduino.cc/arduino-cloud/guides/esp32/)
+- [CREATE AN ARDUINO CLOUD ACCOUNT & SET UP AN ESP8266 BASED BOARD](https://docs.arduino.cc/arduino-cloud/guides/esp32/)
 - TOP RIGHT OF BROWSER:
 - -> GO TO ARDUINO CLOUD
 
